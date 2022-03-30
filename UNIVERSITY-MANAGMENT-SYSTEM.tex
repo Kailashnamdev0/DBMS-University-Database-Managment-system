@@ -1,0 +1,130 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+
+
+
+
+
+\begin{document}
+	
+	
+\begin{center}
+	\huge{University Database Managment System} \\[10pt]
+	\large{Kailash namdev}\\
+	\large{18111030, 6th Semester}\\
+	\large{NIT Raipur}\\
+\end{center}
+\rule{\textwidth}{0.5pt}
+\begin{abstract}
+	\noindent UNIVERSITY DATABASE MANAGEMENT SYSTEM (UMS) deals with the maintenance of university, college, faculty, student information within the university. UMS has a relational database, which is used to store the college, faculty, student, courses and information of a college. 
+	
+	Starting from registration of a new student in the college, it maintains all the details regarding the attendance and marks of the students. The project deals with retrieval of information through an intranet based campus wide portal. It collects related information from all the departments of an organization and maintains files, which are used to generate reports in various forms to measure individual and overall performance of the students. 
+	The university management system is store and retrieve the information through web based application. So it collects the information of individual and overall performance of students in various departments. UMS focuses on the basic need of accomplishing the task of maintaining the large stock of information in a university by creating a database. The interface is a very efficient application for the management of a university which not only benefits the user of the university but also plays a major role in enabling the management of the university to work in a proficient manner. This system will be a platform where users will have access to the facilities of the university including blackboard from anywhere using the Internet. This project report will provide a detailed account of the functionalities of the user interface which is taken as a reference to manage a university. Each subsection of this phase report will feature the important functionalities of the database design. 
+	Development process of the system starts with System analysis. System analysis involves creating a formal model of the problem to be solved by understanding requirements
+	
+	\end{abstract}
+\rule{\textwidth}{0.5pt}	
+
+\section{PURPOSE OF THE SYSTEM}
+
+University database management system  deals with the maintenance of university, college, faculty, student information within the university. This project of UMS involved the automation of student information that can be implemented in different college managements. 
+
+The project deals with retrieval of information through an interface or campus wide portal using database. It collects related information from all the departments of an organization and maintains files, which are used to generate reports in various forms to measure individual and overall performance of the students. 
+
+
+\section{Key feature}
+Student Management Software\\
+Online Admission Management System\\
+Automatic Enrollment Number Generation\\
+Learning Management System\\
+Online Examination Management\\
+Online Result\\
+Student Search\\
+Online Registration\\
+Eligibility Checks\\
+MIS reports Generation\\
+Online Learning Management System\\
+E-Books\\
+Online Video Upload\\
+Admit Card Generation\\
+Examination Management System\\
+Online Result Display\\
+Document Management System\\
+
+\section{PROBLEMS IN THE EXISTING SYSTEM}
+Storing and accessing the data in the form of Excel sheets and account books is a tedious work. It requires a lot of laborious work. It may often yield undesired results. Maintaining these records as piles may turn out to be a costlier task than any other of the colleges and institutions.
+
+\section{RISK INVOLVED IN THE EXISTING SYSTEM}
+Present System is time-consuming and also results in lack of getting inefficient results. Some of the risks involved in the present system can be as follows: During the entrance of marks and attendance, if any mistake is done at a point, then this becomes cumulative and leads to adverse consequences. If there is any need to retrieve results it may seem to be difficult to search.
+
+\section{PROPOSED SYSTEM}
+UMS (UNIVERSITY MANAGEMENT SYSTEM) makes management to get the most updated information always by avoiding manual accounting process. This system has the following functional divisions: 
+Administrator
+ User (Students / Faculties /Department Staff)
+
+
+A university has a structural hierarchy wherein there is administration at each level and there are employees under each administration. Each employee will belong to one administration level. Starting with Chairman, President all the way down to Managers and teaching staff, has a role of providing services to the respective department. The academic department has various courses under the Faculty and student affairs tier. There are people playing various roles like Bookstore Manager maintaining bookstore, librarian maintaining library, treasurer maintaining finance, IT desk providing technical support. Each of these employee has a certain role in the university and hence in the database. The database build by me is based by this hierarchy and classification of employees and each tier into their relevant departments. 
+
+
+\section{ROLES AND RESPONSIBILITIE}{ACTOR}
+
+There are various roles played by different people:-
+ 
+ A. Student:
+  The person who uses the application to interact with university and associated employees, assess his/her career opportunities through application portal search also get professional counseling from experienced advisors. It is instructed by instructors by taking section under various courses offered by the university. It maintains attendance, undertakes examination and pass courses while submitting assignment and minimum grades.
+ 
+ 
+ B. Instructor: The person who teaches students and is employed under a department, works under administration supervision and works for student welfare.
+ 
+ C. Treasurer: The person who supervises the fiscal matter of the university employees and student, responsible for generation of bills and remitting salary on monthly basis. It also keeps an eye on the dues of students.
+  
+  D. Registrar: The person who maintain student details be it demographic or academic details. It also keeps a record of employee and administration staff. It also maintains a backup of the data in case it is lost. It is also responsible for updating the grades and marks of students in accordance with his registered courses.
+   
+   E. Librarian: The person who maintains the library, purchases books to serve as reference material for the students as well as instructors, maintains the quantity of books as per the need and demand. It maintains a record of people who issues books, and update the status of availability for the convenience of students which can be accessed through online portal.
+    
+   
+    
+ F.  Administrator: An employee at a senior level and position, experienced and responsible for running the department for which he is accounted for. He can view the employee details of his department working under him. 
+     
+     G. ISSI staff: Maintains international status of students coming abroad for studies and record of their required documents.
+     
+  H.  University Health and Counsel Services (UHCS) staff: An employee who maintain the record of insurance taken by students in case of availing health services. i) Advisor: A person who provide guidance and monitors the student’s term at the university. 
+
+
+
+
+
+
+
+\section{KEY ENTITIES AND RELATIONSHIP}
+\subsection{Student:} The majority of the database deals with storing details of student involved with complex relationship with various entities. A student has various details (attributes) whose values are stored in database under student table.  A student can be cared by only one guardian, who can act as a caretaker of one or more students. Thus the table contains foreign key constraint as guardianID. The Address could be taken into different table and shown under details corresponding to zipcode, country, street address, state, country. It is not taken here to reduce the complexity as there is always a trade-off between normalization and performance. A student also have a single record with ISSI deparment, single insurance record with the University health services as well as multiple dining bills if it avails the facility. 
+ 
+\subsection{Department:} This consists of supertype entity in hierarchy with minor and major department as subtype entities. A student may either belong to a major or minor department. Thus a student table also has a foreign key for departmentID which references to this table. Major and minor ID’s are thus foreign keys representing major and minor department respectively referencing department table. A department can have multiple courses, employees which can belong to a single department only. A department can have multiple advisors, and an advisor can provide guidance (advice) multiple departments, showing many-to-many relationship. Course: Each course under a department has multiple sections, which are taught by different faculties at different days, timings and locations. A course can have multiple prerequisite courses, who can be a requirement to many courses. This many-to-many relationship is represented by table course has prerequisite which has foreign keys referencing to prerequisite course and courseID under course table. Also, a prerequisiteID corresponds to a courseID in course table and is a foreign key.
+  
+\subsection{Section :} Each section must belong to any one course. The section can be taught by only one instructor. Hence the table contains foreign keys as instructorID referencing to instructor who teaches it and courseID referring to the course to which it belongs. The timing and location can be described as:
+
+ Section dayslot: The day and sectionID uniquely determines when are the days where the classes are scheduled building: This table consists of composite primary key which also references to the building where it will be held. A building can have many rooms with different capacities where these classes are held. 
+
+\subsection{Employee:} An employee represent many user roles which play their importance in the database. Hence a supertype entity employee with instructor, advisor, librarian as subtype entities are taken into consideration. Each of this subtype has a primary key ID which is also a foreign key referencing to the employee table. The administration who manages the university also has employees, where the administration staff are themselves the employees working in the university. Thus administratorID acts as a foreign key referencing to this table. Each employee can belong to only one department and thus has a foreign key referencing to department. Each employer has a salary whose record is maintained in a separate table and the table can maintain many records of an employee.
+
+\subsection{Grade report:}Each student registers for multiple courses, whose grade obtained is recorded in this table. This table maintains the grade of each course taken by the student. If the student wish to retakes the course, then another attribute attempt is taken wherein the number of attempts of passing the course are recorded.
+
+\subsection{Assignment:} Each section has to be passed by completing the assignments which are submitted by students. This mentions the section to which it belongs as well as the deadlines of submission. The table student submit assignments tells about the students taking that course to which that section belongs, while giving details about the submission time as well as describing the evaluation of the assignment. 
+
+\subsection{Jobs and coop:} The student can take multiple part-time jobs as well as co-ops which in turn can be completed by many students. There exists many-to-many cardinality between them. 
+
+\subsection{Student maintains attendance:} This relationship gives the count of attendance maintained by the student. The studentID, courseID and date of recording attendance uniquely determines the attendance of each student who have registered multiple courses. Thus even if a student retakes a course, the record date will uniquely determine the count of each registered course. 
+
+
+\subsection{eBill:} The student have their separate financial record maintained by finance department. A student having multiple e-bills for each semester in which he/she takes courses, has a foreign key referencing to student table. It also gives the amount paid and can be used to calculate dues.
+
+Student issues books Instructor has books a student as well as instructor can issue multiple books thus having a composite primary key determined by book’s ID and student and instructor ID’s respectively
+
+\subsection{Book:} A book can have its own description, details of author as well as multiple copies. Each of these attributes are taken uniquely into their own tables. Book has  copies determines the copies of the book in the library uniquely determined by its copyID. Thus the copies are actually the books issues by instructor and student. A book can have multiple authors, each of one can be a writer of several books. 
+
+
+	
+\end{document}	
+	
